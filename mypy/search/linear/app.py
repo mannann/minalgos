@@ -1,4 +1,3 @@
-arr = [1, 3, 2, 4, 3, 5, 7, 6, 9, 8]
 
 def BubbleSort(arr):
     for i in range(len(arr) - 1):
@@ -13,6 +12,16 @@ def DisplayArray(arr):
         print(arr[i], end=" ")
     print()
 
-DisplayArray(arr)
-BubbleSort(arr)
-DisplayArray(arr)
+def LinearSearch(arr, num):
+    for i in range(len(arr)):
+        if(arr[i] == num):
+            return i
+        
+
+
+if __name__ == '__main__':
+    arr = [10, 3, 2, 4, 3, 5, 7, 6, 9, 8]
+    BubbleSort(arr)
+    DisplayArray(arr)
+    res = LinearSearch(arr, 9)
+    print(res)

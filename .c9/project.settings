@@ -20,6 +20,11 @@
             }
         }
     },
+    "python": {
+        "@formatOnSave": true,
+        "@formatter": "autopep8",
+        "@version": "python3"
+    },
     "run": {
         "configs": {
             "@inited": "true",
