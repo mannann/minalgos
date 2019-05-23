@@ -18,6 +18,6 @@ func LinearSearch(arr []int, num int) {
 
 func main() {
 	fmt.Println("Linear Search in Go Lang.")
-	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 11}
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	LinearSearch(arr, 10)
 }
