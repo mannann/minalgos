@@ -21,7 +21,7 @@ Array defineArray(){
 
 // Increase Size
 
-void increaseSize(Array *arr){
+void increaseArraySize(Array *arr){
     int *p;
     p = (int *)malloc(sizeof(int) * arr->size * 2);
     arr->size = arr->size * 2;
@@ -45,9 +45,20 @@ void displayArray(Array arr){
 // Insert at end
 void insertAtEnd(Array *arr, int num){
    if (arr->len == arr->size){
-      increaseSize(arr);
+      increaseArraySize(arr);
    }
    arr->A[arr->len++] = num;
+}
+
+void insertAtBegin(Array *arr, int num){
+    if(arr->len == arr->size){
+        increaseArraySize(arr);
+    }
+    for(int i = arr->len; i > -1; i--){
+        arr->A[i+1] = arr->A[i];
+    }
+    arr->A[0] = num;
+    arr->len++;
 }
 
 int main(){
@@ -60,12 +71,10 @@ int main(){
     insertAtEnd(&arr, 13);
     insertAtEnd(&arr, 14);
     insertAtEnd(&arr, 15);
-    insertAtEnd(&arr, 16);
-    insertAtEnd(&arr, 17);
-    insertAtEnd(&arr, 18);
-    insertAtEnd(&arr, 19);
-    insertAtEnd(&arr, 20);
-    insertAtEnd(&arr, 21);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
+    insertAtBegin(&arr, 0);
     displayArray(arr);
     printf("Len\t:%d \n", arr.len);
     printf("Size\t:%d \n", arr.size);
