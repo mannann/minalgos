@@ -89,6 +89,16 @@ void deleteAtBegin(Array *arr){
     arr->len--;
 }
 
+void deleteAtIndex(Array *arr, int index){
+    if (index > arr->len){
+        return;
+    }
+    for(int i = index; i < arr->len - 1; i++){
+        arr->A[i] = arr->A[i+1];
+    }
+    arr->len--;
+}
+
 
 int main(){
     printf("Array Declaration in C.\n");
@@ -116,6 +126,10 @@ int main(){
     printf("Len\t:%d \n", arr.len);
     printf("Size\t:%d \n", arr.size);
     deleteAtBegin(&arr);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
+    deleteAtIndex(&arr, 1);
     displayArray(arr);
     printf("Len\t:%d \n", arr.len);
     printf("Size\t:%d \n", arr.size);
