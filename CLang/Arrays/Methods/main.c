@@ -75,21 +75,47 @@ void insertAtIndex(Array *arr, int index, int num){
     arr->len++;
 }
 
+void deleteAtEnd(Array *arr){
+    if(arr->len > 0){
+        arr->A[arr->len--];   
+    }
+}
+
+
+void deleteAtBegin(Array *arr){
+    for(int i = 0; i < arr->len - 1; i++){
+        arr->A[i] = arr->A[i+1];
+    }
+    arr->len--;
+}
+
+
 int main(){
     printf("Array Declaration in C.\n");
     Array arr;
     arr = defineArray();
-    // displayArray(arr);
-    // insertAtEnd(&arr, 11);
-    // insertAtEnd(&arr, 12);
-    // displayArray(arr);
-    // printf("Len\t:%d \n", arr.len);
-    // printf("Size\t:%d \n", arr.size);
-    // insertAtBegin(&arr, 0);
-    // displayArray(arr);
-    // printf("Len\t:%d \n", arr.len);
-    // printf("Size\t:%d \n", arr.size);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
+    insertAtEnd(&arr, 11);
+    insertAtEnd(&arr, 12);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
+    insertAtBegin(&arr, 0);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
     insertAtIndex(&arr, 5, 90);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
+    deleteAtEnd(&arr);
+    deleteAtEnd(&arr);
+    displayArray(arr);
+    printf("Len\t:%d \n", arr.len);
+    printf("Size\t:%d \n", arr.size);
+    deleteAtBegin(&arr);
     displayArray(arr);
     printf("Len\t:%d \n", arr.len);
     printf("Size\t:%d \n", arr.size);
