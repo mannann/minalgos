@@ -8,7 +8,8 @@ func BinarySearch(arr []int, num int) {
 	var res int
 	max := len(arr)
 	for min <= max {
-		mid = (min + max) / 2
+		// mid = (min + max) / 2
+		mid = min + (max-min)/2
 		if arr[mid] == num {
 			res = 1
 			break
