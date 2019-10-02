@@ -64,7 +64,7 @@ int BinarySearch(Array arr, int num){
     int max = arr.len;
     int mid;
     while(min < max){
-        mid = (min + max) / 2;
+        mid = min + (max - min) / 2;
         for(int i = 0; i < arr.len; i++){
             if(arr.A[mid] == num){
                 return 1;

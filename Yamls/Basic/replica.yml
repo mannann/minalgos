@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: my-replia-pod
+  labels:
+    app: my-app
+spec:
+  template: 
+    replicas: 5
+    selector:
+      matchLabels:
+        app: my-app
+    spec:
+      metadata:
+        name: my-replica-pod
+        labels:
+          app: my-app
+      spec:
+        containers:
+          - name: my-replica-cont
+            image: nginx
+            command: ["sh", "-c", "echo Hello World!!!"]
+            ports:
+            - containerPort: 80
